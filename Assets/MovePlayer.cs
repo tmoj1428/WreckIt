@@ -6,6 +6,8 @@ public class MovePlayer : MonoBehaviour
 {
     [Range(0f, 1f)] public float movementAmount;
     [Range(0f, 1f)] public float speedAmount;
+    public GameObject leftBound;
+    public GameObject rightBound;
 
     // Start is called before the first frame update
     void Start()
@@ -27,4 +29,12 @@ public class MovePlayer : MonoBehaviour
 
         transform.position += new Vector3(speedAmount, 0, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("RightBound"))
+        {
+            transform.position = new Vector3(leftBound.transform.position.x, transform.position.y, 0);
+        }
+    } 
 }
