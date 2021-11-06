@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RightBound
   - LeftBound
+  - BoxTag
+  - BombObj
   layers:
   - Default
   - TransparentFX
