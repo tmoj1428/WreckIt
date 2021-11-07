@@ -9,6 +9,7 @@ TagManager:
   - BoxTag
   - BombObj
   - FloorObj
+  - PlayerObj
   layers:
   - Default
   - TransparentFX
