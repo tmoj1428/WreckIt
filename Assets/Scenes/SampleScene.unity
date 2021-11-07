@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 1008468331}
   - {fileID: 714293371}
   - {fileID: 362592920}
-  timerMaxTime: 3
+  timerMaxTime: 15
   numberOfBlocks: 25
 --- !u!4 &34123421
 Transform:
@@ -275,7 +275,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 6940026713467325038, guid: 08e4007269ce03e44b7244f9c7f0bb34,
     type: 3}
   player: {fileID: 1473879952}
-  timerMaxTime: 1
+  timerMaxTime: 0.7
 --- !u!4 &310532193
 Transform:
   m_ObjectHideFlags: 0

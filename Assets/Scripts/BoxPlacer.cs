@@ -32,9 +32,13 @@ public class BoxPlacer : MonoBehaviour
         }
         else
         {
-            GameObject newLevel;
-            newLevel = Instantiate(boxPrefab);
-            newLevel.transform.position = new Vector3(points[GetRandomPrefabInitialX()].transform.position.x, -4.2f, 0);
+            // add a row of boxes
+            for (int i = 0; i < (int)(points.Length / 2); i++)
+            {
+                GameObject newLevel;
+                newLevel = Instantiate(boxPrefab);
+                newLevel.transform.position = new Vector3(points[GetRandomPrefabInitialX()].transform.position.x, -4.2f, 0);
+            }
 
             currentTimeVal = timerMaxTime;
         }
