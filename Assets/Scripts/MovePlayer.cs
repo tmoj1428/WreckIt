@@ -42,7 +42,8 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BoxTag"))
         {
-            Debug.Log("Game Over@@@@@@@@@@@@@@");
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
