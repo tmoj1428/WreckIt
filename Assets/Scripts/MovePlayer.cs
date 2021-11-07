@@ -8,6 +8,7 @@ public class MovePlayer : MonoBehaviour
     [Range(0f, 1f)] public float speedAmount;
     public GameObject leftBound;
     public GameObject rightBound;
+    // public GameObject explosionPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +39,18 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+/*    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BoxTag"))
         {
+            // destory player and the box on collision
             Destroy(gameObject);
             Destroy(collision.gameObject);
+
+            // explosion animation on box destroy
+            GameObject explosion = Instantiate(explosionPrefab);
+            explosion.transform.position = gameObject.transform.position;
         }
     }
+*/
 }

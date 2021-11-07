@@ -16,5 +16,16 @@ public class BoxController : MonoBehaviour
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = gameObject.transform.position;
         }
+
+        if (collision.gameObject.CompareTag("PlayerObj"))
+        {
+            // destory box an bomb object on collision
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+
+            // explosion animation on box destroy
+            GameObject explosion = Instantiate(explosionPrefab);
+            explosion.transform.position = gameObject.transform.position;
+        }
     }
 }
