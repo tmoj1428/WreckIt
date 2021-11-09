@@ -10,13 +10,13 @@ public class BoxPlacer : MonoBehaviour
     public GameObject[]     points;
 
     private float           currentTimeVal;
-    private GameObject[][]  boxes = new GameObject[15][];
+    private List<List<GameObject>> boxList = new List<List<GameObject>>();
 
     private void Awake()
     {
         for (int i = 0; i < points.Length; i++)
         {
-            boxes[i] = new GameObject[9];
+            boxList.Add(new List<GameObject>());
         }
         initialDistribution();
     }
@@ -25,7 +25,6 @@ public class BoxPlacer : MonoBehaviour
     void Start()
     {
         currentTimeVal = timerMaxTime;
-        
     }
 
     // Update is called once per frame
@@ -44,12 +43,24 @@ public class BoxPlacer : MonoBehaviour
                 newLevel = Instantiate(boxPrefab);
                 int col = GetRandomPrefabInitialX();
                 newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
-                addToArray(col, newLevel);
+                boxList[col].Add(newLevel);
             }
 
             currentTimeVal = timerMaxTime;
         }
         
+    }
+
+    public void destroyBoxes()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            if (boxList[i].Count > 0)
+            {
+                Destroy(boxList[i][0]);
+                boxList[i].RemoveAt(0);
+            }
+        }
     }
 
     private void initialDistribution()
@@ -60,33 +71,12 @@ public class BoxPlacer : MonoBehaviour
             newLevel = Instantiate(boxPrefab);
             int col = GetRandomPrefabInitialX();
             newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
-            addToArray(col, newLevel);
+            boxList[col].Add(newLevel);
         }
     }
 
-    int GetRandomPrefabInitialX()
+    private int GetRandomPrefabInitialX()
     {
         return Random.Range(0, points.Length - 1);
-    }
-
-    void destroyBoxes()
-    {
-        for (int i = 0; i < points.Length; i++)
-        {
-            if (boxes[i].Length > 0)
-                Destroy(boxes[i][0]);
-        }
-    }
-
-    private void addToArray(int col, GameObject newLevel)
-    {
-        if (boxes[col].Length > 0)
-        {
-            boxes[col][0] = newLevel;
-        }
-        else
-        {
-            boxes[col][boxes[col].Length] = newLevel;
-        }
     }
 }
