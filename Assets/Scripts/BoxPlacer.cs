@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BoxPlacer : MonoBehaviour
 {
-    public GameObject   boxPrefab;
-    public GameObject[] points;
-    public float        timerMaxTime;
-    public int          numberOfBlocks;
+    public int              numberOfBlocks;
+    public float            timerMaxTime;
+    public GameObject       boxPrefab;
+    public GameObject[]     points;
 
-    private float currentTimeVal;
+    private float           currentTimeVal;
+    private GameObject[][]  boxes = new GameObject[15][];
 
     private void Awake()
     {
+        for (int i = 0; i < points.Length; i++)
+        {
+            boxes[i] = new GameObject[9];
+        }
         initialDistribution();
     }
 
@@ -20,12 +25,12 @@ public class BoxPlacer : MonoBehaviour
     void Start()
     {
         currentTimeVal = timerMaxTime;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (currentTimeVal > 0)
         {
             currentTimeVal -= Time.deltaTime;
@@ -37,7 +42,9 @@ public class BoxPlacer : MonoBehaviour
             {
                 GameObject newLevel;
                 newLevel = Instantiate(boxPrefab);
-                newLevel.transform.position = new Vector3(points[GetRandomPrefabInitialX()].transform.position.x, -4.2f, 0);
+                int col = GetRandomPrefabInitialX();
+                newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
+                addToArray(col, newLevel);
             }
 
             currentTimeVal = timerMaxTime;
@@ -51,12 +58,35 @@ public class BoxPlacer : MonoBehaviour
         {
             GameObject newLevel;
             newLevel = Instantiate(boxPrefab);
-            newLevel.transform.position = new Vector3(points[GetRandomPrefabInitialX()].transform.position.x, -4.2f, 0);
+            int col = GetRandomPrefabInitialX();
+            newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
+            addToArray(col, newLevel);
         }
     }
 
     int GetRandomPrefabInitialX()
     {
         return Random.Range(0, points.Length - 1);
+    }
+
+    void destroyBoxes()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            if (boxes[i].Length > 0)
+                Destroy(boxes[i][0]);
+        }
+    }
+
+    private void addToArray(int col, GameObject newLevel)
+    {
+        if (boxes[col].Length > 0)
+        {
+            boxes[col][0] = newLevel;
+        }
+        else
+        {
+            boxes[col][boxes[col].Length] = newLevel;
+        }
     }
 }
