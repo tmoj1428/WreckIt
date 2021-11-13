@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DestoryComboController : MonoBehaviour
+public class ComboPlacer : MonoBehaviour
 {
     public float timerMaxTime;
     public GameObject bombDestroyCombo;

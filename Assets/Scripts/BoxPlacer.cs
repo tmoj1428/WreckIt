@@ -37,14 +37,7 @@ public class BoxPlacer : MonoBehaviour
         else
         {
             // add a row of boxes
-            for (int i = 0; i < (int)(points.Length / 2); i++)
-            {
-                GameObject newLevel;
-                newLevel = Instantiate(boxPrefab);
-                int col = GetRandomPrefabInitialX();
-                newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
-                boxList[col].Add(newLevel);
-            }
+            addBoxes();
 
             currentTimeVal = timerMaxTime;
         }
@@ -60,6 +53,18 @@ public class BoxPlacer : MonoBehaviour
                 Destroy(boxList[i][0]);
                 boxList[i].RemoveAt(0);
             }
+        }
+    }
+
+    public void addBoxes()
+    {
+        for (int i = 0; i < (int)(points.Length / 2); i++)
+        {
+            GameObject newLevel;
+            newLevel = Instantiate(boxPrefab);
+            int col = GetRandomPrefabInitialX();
+            newLevel.transform.position = new Vector3(points[col].transform.position.x, -4.2f, 0);
+            boxList[col].Add(newLevel);
         }
     }
 

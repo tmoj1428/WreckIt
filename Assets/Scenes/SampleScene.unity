@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 2099013112}
   - component: {fileID: 2099013111}
   m_Layer: 0
-  m_Name: DestroyPlacer
+  m_Name: CombpPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0233a3f73fd2cca4da08dc47eaee4910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMaxTime: 40
+  timerMaxTime: 5
   bombDestroyCombo: {fileID: 429048126667891819, guid: 967786b9b5c0c234081dbf6a57963c57,
     type: 3}
 --- !u!4 &2099013112
