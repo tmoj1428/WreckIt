@@ -8,6 +8,8 @@ public class BoxController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BombObj"))
         {
+            FindObjectOfType<AudioManager>().Play("explosion");
+
             // destory box an bomb object on collision
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -19,6 +21,7 @@ public class BoxController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("PlayerObj"))
         {
+            FindObjectOfType<AudioManager>().Play("explosion");
             // destory box an bomb object on collision
             Destroy(collision.gameObject);
             Destroy(gameObject);

@@ -14,6 +14,8 @@ public class ComboController : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("explosion");
+
                 FindObjectOfType<BoxPlacer>().destroyBoxes();
                 Destroy(gameObject);
             }
