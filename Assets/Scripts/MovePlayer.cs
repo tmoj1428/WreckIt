@@ -7,7 +7,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject leftBound;
     public GameObject rightBound;
     [HideInInspector]
-    public int playerScore;
+    public static int playerScore;
     public EventSystemHandler eventSystem;
 
     void Start()

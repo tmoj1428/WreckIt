@@ -1536,6 +1536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554205ca78c201f49a5d276d4552931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1263798322}
 --- !u!1 &1645783159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Points: '
+  m_Text: 'Score: '
 --- !u!222 &2114902152
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 1008468331}
   - {fileID: 714293371}
   - {fileID: 362592920}
+  eventSystem: {fileID: 1560033522}
 --- !u!4 &34123421
 Transform:
   m_ObjectHideFlags: 0
