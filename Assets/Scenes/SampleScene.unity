@@ -1076,8 +1076,9 @@ MonoBehaviour:
   sounds:
   - name: explosion
     clip: {fileID: 8300000, guid: 78b06be29abbade40a0dcbc690ce77cd, type: 3}
-    volume: 0.074
-    pitch: 0.1
+    volume: 0.203
+    pitch: 2.49
+    source: {fileID: 0}
 --- !u!1 &2099013110
 GameObject:
   m_ObjectHideFlags: 0
