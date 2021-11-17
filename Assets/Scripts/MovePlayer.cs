@@ -11,7 +11,9 @@ public class MovePlayer : MonoBehaviour
 
     void Start()
     {
-        new WaitForSeconds(4);
+        //new WaitForSeconds(4);
+
+        FindObjectOfType<AudioManager>().Play("airPlane");
     }
 
     void Update()

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoxController : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class BoxController : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerObj"))
         {
             FindObjectOfType<AudioManager>().Play("explosion");
+
+            // stop playing airplane sound
+            FindObjectOfType<AudioManager>().Stop("airPlane");
+
+            // load game over scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
             // destory box an bomb object on collision
             Destroy(collision.gameObject);
             Destroy(gameObject);

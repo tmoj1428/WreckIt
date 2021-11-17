@@ -834,7 +834,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.46}
+    oldSize: {x: 3.24, y: 1.538}
     newSize: {x: 0.96, y: 0.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -882,7 +882,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3d8f9b4d62125e24e9ce8f49ed391c89, type: 3}
+  m_Sprite: {fileID: -4084943837584496297, guid: f55572ee2ecf7bf4ba1bcdb0a47cb2e6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -902,7 +903,7 @@ Transform:
   m_GameObject: {fileID: 1473879952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.48, y: 2.96, z: 0}
-  m_LocalScale: {x: 2.273775, y: 2.4202583, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1076,8 +1077,21 @@ MonoBehaviour:
   sounds:
   - name: explosion
     clip: {fileID: 8300000, guid: 78b06be29abbade40a0dcbc690ce77cd, type: 3}
+    loop: 0
+    volume: 0.327
+    pitch: 2.49
+    source: {fileID: 0}
+  - name: background
+    clip: {fileID: 8300000, guid: 78b06be29abbade40a0dcbc690ce77cd, type: 3}
+    loop: 0
     volume: 0.203
     pitch: 2.49
+    source: {fileID: 0}
+  - name: airPlane
+    clip: {fileID: 8300000, guid: f5c4e667e5555f54fa36db315db04a0f, type: 3}
+    loop: 1
+    volume: 0.35
+    pitch: 0.7
     source: {fileID: 0}
 --- !u!1 &2099013110
 GameObject:
