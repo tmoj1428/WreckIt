@@ -1,8 +1,8 @@
 # WreckIt
-##A remake of chopper drop classic game for Itch.io jam
+## A remake of chopper drop classic game for Itch.io jam
 This game is a remake of Chopper drop game.
 You can play it from this [link](https://www.classicgamesarcade.com/game/21739/chopper-drop.html)
-##Features that have been added to this game:
+## Features that have been added to this game:
   1. The plane can go Up and down with the Arrow Keys.
   2. Every 13 seconds a floor is added to half of the building columns.
   3. After a while, a combo box will appear that may have one of the following two features:
