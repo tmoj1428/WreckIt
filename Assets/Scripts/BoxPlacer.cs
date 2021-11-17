@@ -8,6 +8,7 @@ public class BoxPlacer : MonoBehaviour
     public float            timerMaxTime;
     public GameObject       boxPrefab;
     public GameObject[]     points;
+    public EventSystemHandler eventSystem;
 
     private float           currentTimeVal;
     private List<List<GameObject>> boxList = new List<List<GameObject>>();
@@ -50,6 +51,7 @@ public class BoxPlacer : MonoBehaviour
         {
             if (boxList[i].Count > 0)
             {
+                eventSystem.onBoxWreck.Invoke();
                 Destroy(boxList[i][0]);
                 boxList[i].RemoveAt(0);
             }

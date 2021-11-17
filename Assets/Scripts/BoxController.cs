@@ -3,14 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class BoxController : MonoBehaviour
 {
-    public GameObject explosionPrefab;
+    public GameObject   explosionPrefab;
+    //public EventSystemHandler eventSystem;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BombObj"))
         {
             FindObjectOfType<AudioManager>().Play("explosion");
-
+            FindObjectOfType<EventSystemHandler>().onBoxWreck.Invoke();
+            //eventSystem.onBoxWreck.Invoke();
             // destory box an bomb object on collision
             Destroy(collision.gameObject);
             Destroy(gameObject);

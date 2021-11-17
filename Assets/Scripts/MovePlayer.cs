@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -8,12 +6,17 @@ public class MovePlayer : MonoBehaviour
     [Range(0f, 1f)] public float speedAmount;
     public GameObject leftBound;
     public GameObject rightBound;
+    [HideInInspector]
+    public int playerScore;
+    public EventSystemHandler eventSystem;
 
     void Start()
     {
         //new WaitForSeconds(4);
 
+        playerScore = 0;
         FindObjectOfType<AudioManager>().Play("airPlane");
+        eventSystem.onBoxWreck.AddListener(UpdateScoreTextReq);
     }
 
     void Update()
@@ -36,5 +39,11 @@ public class MovePlayer : MonoBehaviour
         {
             transform.position = new Vector3(leftBound.transform.position.x, transform.position.y, 0);
         }
+    }
+
+    private void UpdateScoreTextReq()
+    {
+        playerScore += 5;
+        eventSystem.onUpdateScore.Invoke();
     }
 }
