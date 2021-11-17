@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoxPlacer : MonoBehaviour
 {
     public int              numberOfBlocks;
+    [HideInInspector]
     public float            timerMaxTime;
     public GameObject       boxPrefab;
     public GameObject[]     points;
@@ -15,6 +16,7 @@ public class BoxPlacer : MonoBehaviour
 
     private void Awake()
     {
+        timerMaxTime = 13;
         for (int i = 0; i < points.Length; i++)
         {
             boxList.Add(new List<GameObject>());
@@ -39,6 +41,13 @@ public class BoxPlacer : MonoBehaviour
         {
             // add a row of boxes
             addBoxes();
+            if (MovePlayer.playerScore > 150)
+            {
+                if (timerMaxTime > 7)
+                {
+                    timerMaxTime -= 0.2f;
+                }
+            }
 
             currentTimeVal = timerMaxTime;
         }

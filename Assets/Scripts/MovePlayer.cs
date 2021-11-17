@@ -44,6 +44,10 @@ public class MovePlayer : MonoBehaviour
     private void UpdateScoreTextReq()
     {
         playerScore += 5;
+        if (playerScore > 150)
+        {
+            FindObjectOfType<BoxPlacer>().timerMaxTime -= 0.2f;
+        }
         eventSystem.onUpdateScore.Invoke();
     }
 }
