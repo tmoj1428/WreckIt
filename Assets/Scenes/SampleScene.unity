@@ -774,8 +774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49.8, y: -22.7}
-  m_SizeDelta: {x: 99.516235, y: 45.447906}
+  m_AnchoredPosition: {x: 199.59998, y: -91.70001}
+  m_SizeDelta: {x: 399.09827, y: 183.48386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271427183
 MonoBehaviour:
@@ -798,11 +798,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 110
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementAmount: 0.034
-  speedAmount: 0.021
+  speedAmount: 0.065
   leftBound: {fileID: 1374100183}
   rightBound: {fileID: 2137548033}
   eventSystem: {fileID: 1560033522}
@@ -1317,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0233a3f73fd2cca4da08dc47eaee4910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMaxTime: 10
+  timerMaxTime: 30
   bombDestroyCombo: {fileID: 429048126667891819, guid: 967786b9b5c0c234081dbf6a57963c57,
     type: 3}
 --- !u!4 &2099013112
@@ -1511,8 +1511,8 @@ Canvas:
   m_GameObject: {fileID: 2146247384}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

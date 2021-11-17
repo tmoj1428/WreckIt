@@ -16,7 +16,7 @@ public class BoxPlacer : MonoBehaviour
 
     private void Awake()
     {
-        timerMaxTime = 13;
+        timerMaxTime = 9;
         for (int i = 0; i < points.Length; i++)
         {
             boxList.Add(new List<GameObject>());
@@ -43,7 +43,7 @@ public class BoxPlacer : MonoBehaviour
             addBoxes();
             if (MovePlayer.playerScore > 150)
             {
-                if (timerMaxTime > 7)
+                if (timerMaxTime > 6)
                 {
                     timerMaxTime -= 0.2f;
                 }

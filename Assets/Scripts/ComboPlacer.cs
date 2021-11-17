@@ -16,15 +16,18 @@ public class ComboPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentTimeVal > 0)
+        if (MovePlayer.playerScore > 40)
         {
-            currentTimeVal -= Time.deltaTime;
-        }
-        else
-        {
-            GameObject newCombo = Instantiate(bombDestroyCombo);
-            newCombo.transform.position = new Vector3(RandomX(), RandomY(), 0);
-            currentTimeVal = timerMaxTime;
+            if (currentTimeVal > 0)
+            {
+                currentTimeVal -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject newCombo = Instantiate(bombDestroyCombo);
+                newCombo.transform.position = new Vector3(RandomX(), RandomY(), 0);
+                currentTimeVal = timerMaxTime;
+            }
         }
     }
 

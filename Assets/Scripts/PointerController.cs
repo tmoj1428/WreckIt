@@ -23,7 +23,7 @@ public class PointerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 onPlayButton = false;
-                transform.position = new Vector3(-8, -2.5f, 0);
+                transform.position = new Vector3(-8, -1.5f, 0);
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
