@@ -8,7 +8,12 @@ public class MovePlayer : MonoBehaviour
     [Range(0f, 1f)] public float speedAmount;
     public GameObject leftBound;
     public GameObject rightBound;
-    
+
+    void Start()
+    {
+        new WaitForSeconds(4);
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
